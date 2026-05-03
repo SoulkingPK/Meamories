@@ -398,7 +398,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (musicBtnEl) {
         musicBtnEl.textContent = '♬ Music';
         musicBtnEl.classList.remove('muted');
+        musicBtnEl.hidden = false;   // show panel music button
       }
+      document.getElementById('musicBtn').hidden = true; // hide main music btn
 
       setTimeout(function () {
         panel.classList.add('open');
@@ -466,6 +468,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lockIcon) lockIcon.textContent = '🔐';
     stopPanelMusic(musicEl);
     resumeBgMusic();
+    // Hide panel music btn, restore main music btn
+    ['panel1MusicBtn','panel2MusicBtn'].forEach(function(id){
+      var b = document.getElementById(id);
+      if (b) b.hidden = true;
+    });
+    document.getElementById('musicBtn').hidden = false;
   }
 
   // Shake animation
