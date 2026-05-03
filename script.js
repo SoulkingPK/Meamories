@@ -133,9 +133,97 @@ function startMusic() {
   });
 }
 
-// Entry button — user tap guarantees music permission
+// ✨ Glitter burst — canvas particles exploding from center for 4 seconds
+function glitterBurst() {
+  var canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:fixed;inset:0;z-index:100001;pointer-events:none;';
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+  document.body.appendChild(canvas);
+
+  var ctx = canvas.getContext('2d');
+  var colors = ['#f7c6c7','#f2d388','#fcd5b5','#ff99bb','#ffe066',
+                '#ffffff','#8B5E3C','#ffaacc','#ffd700','#ffb347','#e8a0bf'];
+  var particles = [];
+
+  for (var i = 0; i < 180; i++) {
+    var angle = Math.random() * Math.PI * 2;
+    var speed = 4 + Math.random() * 9;
+    particles.push({
+      x:        canvas.width  / 2,
+      y:        canvas.height / 2,
+      vx:       Math.cos(angle) * speed,
+      vy:       Math.sin(angle) * speed - 3,   // slight upward bias
+      size:     4 + Math.random() * 9,
+      color:    colors[Math.floor(Math.random() * colors.length)],
+      alpha:    1,
+      rotation: Math.random() * Math.PI * 2,
+      rotSpeed: (Math.random() - 0.5) * 0.25,
+      gravity:  0.07 + Math.random() * 0.06,
+      shape:    Math.floor(Math.random() * 3)  // 0=square, 1=circle, 2=diamond
+    });
+  }
+
+  var start    = Date.now();
+  var duration = 4000;
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var elapsed  = Date.now() - start;
+    var progress = elapsed / duration;
+    var alive    = false;
+
+    particles.forEach(function(p) {
+      p.x  += p.vx;
+      p.y  += p.vy;
+      p.vy += p.gravity;
+      p.vx *= 0.985;
+      p.rotation += p.rotSpeed;
+      p.alpha = Math.max(0, 1 - progress * 1.2);
+
+      if (p.alpha > 0.01) {
+        alive = true;
+        ctx.save();
+        ctx.globalAlpha = p.alpha;
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rotation);
+        ctx.fillStyle   = p.color;
+        ctx.shadowColor = p.color;
+        ctx.shadowBlur  = 8;
+
+        if (p.shape === 0) {
+          ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+        } else if (p.shape === 1) {
+          ctx.beginPath();
+          ctx.arc(0, 0, p.size / 2, 0, Math.PI * 2);
+          ctx.fill();
+        } else {
+          ctx.beginPath();
+          ctx.moveTo(0, -p.size);
+          ctx.lineTo(p.size * 0.5, 0);
+          ctx.lineTo(0,  p.size);
+          ctx.lineTo(-p.size * 0.5, 0);
+          ctx.closePath();
+          ctx.fill();
+        }
+        ctx.restore();
+      }
+    });
+
+    if (alive && elapsed < duration + 500) {
+      requestAnimationFrame(animate);
+    } else {
+      canvas.remove();
+    }
+  }
+
+  animate();
+}
+
+// Entry button — fire glitter, then reveal site + start music
 entryBtn.addEventListener('click', () => {
-  entrySplash.classList.add('hidden');
+  glitterBurst();                                    // 🎉 glitter!
+  setTimeout(() => entrySplash.classList.add('hidden'), 500); // slight delay looks better
   startMusic();
 });
 
