@@ -390,6 +390,16 @@ document.addEventListener('DOMContentLoaded', () => {
       // ↓ Must be called BEFORE setTimeout to stay in user gesture context
       pauseBgMusic();
       playPanelMusic(musicEl);
+
+      // Reset the music button label to active state
+      var musicBtnEl = config.panelId === 'secretPanel'
+        ? document.getElementById('panel1MusicBtn')
+        : document.getElementById('panel2MusicBtn');
+      if (musicBtnEl) {
+        musicBtnEl.textContent = '♬ Music';
+        musicBtnEl.classList.remove('muted');
+      }
+
       setTimeout(function () {
         panel.classList.add('open');
         document.body.style.overflow = 'hidden';
@@ -420,6 +430,25 @@ document.addEventListener('DOMContentLoaded', () => {
       .forEach(function (b) {
         b.addEventListener('click', function () { closePanel(panel, musicEl); });
       });
+
+    // Panel music toggle button
+    var musicBtnId = cfg.panelId === 'secretPanel' ? 'panel1MusicBtn' : 'panel2MusicBtn';
+    var panelMusicBtn = document.getElementById(musicBtnId);
+    if (panelMusicBtn) {
+      panelMusicBtn.addEventListener('click', function () {
+        if (musicEl.paused) {
+          // Resume music
+          musicEl.play().catch(function () {});
+          panelMusicBtn.textContent = '♬ Music';
+          panelMusicBtn.classList.remove('muted');
+        } else {
+          // Mute/pause music
+          musicEl.pause();
+          panelMusicBtn.textContent = '♪ Muted';
+          panelMusicBtn.classList.add('muted');
+        }
+      });
+    }
   });
 
   document.addEventListener('keydown', function (e) {
