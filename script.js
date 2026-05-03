@@ -118,13 +118,15 @@ function setMusicPlaying(state) {
   musicBtn.style.background = state ? 'rgba(247,198,199,0.5)' : 'rgba(255,249,245,0.92)';
 }
 
+// Kick off preload immediately so file is buffered before user clicks
+bgMusic.volume = 0.6;
+bgMusic.load();
+
 function startMusic() {
-  bgMusic.muted  = false;
-  bgMusic.volume = 0.6;
   bgMusic.play().then(() => {
     setMusicPlaying(true);
   }).catch(() => {
-    // Fallback if still blocked
+    // Fallback: muted trick for very strict browsers
     bgMusic.muted = true;
     bgMusic.play().then(() => {
       bgMusic.muted = false;
