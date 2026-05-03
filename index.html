@@ -39,9 +39,6 @@
     <span class="music-label">Music</span>
   </button>
 
-  <!-- Panel music buttons — body-level so position:fixed works correctly -->
-  <button class="panel-music-btn" id="panel1MusicBtn" title="Toggle music" hidden>♬ Music</button>
-  <button class="panel-music-btn" id="panel2MusicBtn" title="Toggle music" hidden>♬ Music</button>
 
   <!-- ============ SCROLL PROGRESS ============ -->
   <div class="scroll-progress" id="scrollProgress"></div>
@@ -280,6 +277,11 @@
       <div class="secret-panel-lock-open">🔓</div>
       <h2 class="secret-panel-title">Our Secret Garden</h2>
 
+      <!-- Inline music toggle -->
+      <div class="panel-music-wrap">
+        <button class="panel-music-btn" id="panel1MusicBtn">♬ Music</button>
+      </div>
+
       <!-- Top 3 photos -->
       <div class="secret-photos-row">
         <div class="secret-polaroid sp-rotate-left">
@@ -335,6 +337,11 @@
       <button class="secret-panel-close" id="secretPanel2Close">✕ Close</button>
       <div class="secret-panel-lock-open">🔓</div>
       <h2 class="secret-panel-title">Our Hidden World</h2>
+
+      <!-- Inline music toggle -->
+      <div class="panel-music-wrap">
+        <button class="panel-music-btn" id="panel2MusicBtn">♬ Music</button>
+      </div>
 
       <!-- Top 3 photos -->
       <div class="secret-photos-row">

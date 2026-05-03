@@ -391,16 +391,14 @@ document.addEventListener('DOMContentLoaded', () => {
       pauseBgMusic();
       playPanelMusic(musicEl);
 
-      // Reset the music button label to active state
+      // Reset music button to playing state each time panel opens
       var musicBtnEl = config.panelId === 'secretPanel'
         ? document.getElementById('panel1MusicBtn')
         : document.getElementById('panel2MusicBtn');
       if (musicBtnEl) {
         musicBtnEl.textContent = '♬ Music';
         musicBtnEl.classList.remove('muted');
-        musicBtnEl.hidden = false;   // show panel music button
       }
-      document.getElementById('musicBtn').hidden = true; // hide main music btn
 
       setTimeout(function () {
         panel.classList.add('open');
@@ -468,12 +466,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lockIcon) lockIcon.textContent = '🔐';
     stopPanelMusic(musicEl);
     resumeBgMusic();
-    // Hide panel music btn, restore main music btn
-    ['panel1MusicBtn','panel2MusicBtn'].forEach(function(id){
-      var b = document.getElementById(id);
-      if (b) b.hidden = true;
-    });
-    document.getElementById('musicBtn').hidden = false;
   }
 
   // Shake animation

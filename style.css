@@ -1588,25 +1588,27 @@ img {
   transform: scale(1.05);
 }
 
-/* Panel music toggle — mirrors the main site music button */
-.panel-music-btn {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 9400;
+/* Panel music wrap — centers the button in the panel content */
+.panel-music-wrap {
   display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+/* Panel music button — inline content, same pill style as main music btn */
+.panel-music-btn {
+  display: inline-flex;
   align-items: center;
   gap: 6px;
   background: rgba(255, 249, 245, 0.92);
   border: 1.5px solid var(--pink);
   border-radius: 50px;
-  padding: 8px 18px;
+  padding: 10px 24px;
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--brown);
   cursor: pointer;
   box-shadow: 0 4px 18px rgba(139, 94, 60, 0.15);
-  backdrop-filter: blur(8px);
   transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
