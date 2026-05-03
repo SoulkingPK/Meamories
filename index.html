@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Journey — A College Farewell</title>
+  <meta name="description"
+    content="A digital farewell experience — scroll through our shared memories, laughter, and moments that will stay forever." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ============ MUSIC TOGGLE ============ -->
+  <button class="music-btn" id="musicBtn" title="Toggle Background Music" aria-label="Toggle music">
+    <span class="music-icon" id="musicIcon">♪</span>
+    <span class="music-label">Music</span>
+  </button>
+
+  <!-- ============ SCROLL PROGRESS ============ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="grain-overlay"></div>
+    <!-- Floating polaroids -->
+    <div class="floating-polaroids">
+      <div class="float-polaroid fp1"><img src="images/photo1.jpg" alt="Memory 1" /></div>
+      <div class="float-polaroid fp2"><img src="images/photo2.jpg" alt="Memory 2" /></div>
+      <div class="float-polaroid fp3"><img src="images/photo3.jpg" alt="Memory 3" /></div>
+      <div class="float-polaroid fp4"><img src="images/photo4.jpg" alt="Memory 4" /></div>
+    </div>
+    <div class="hero-content fade-in">
+      <div class="hero-badge">✦My Comfort Zone✦</div>
+      <h1 class="hero-title">Memories<br /><span class="accent">That Stay</span></h1>
+      <p class="hero-sub">Four years. Countless moments. One lifetime of memories.</p>
+      <p class="hero-scroll-hint">
+        <span class="scroll-line"></span>
+        Scroll to relive the moments
+        <span class="scroll-line"></span>
+      </p>
+    </div>
+    <div class="hero-hearts">
+      <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+    </div>
+  </section>
+
+  <!-- ============ CHAPTER 1: THE BEGINNING ============ -->
+  <section class="memory-section" id="chapter1">
+    <div class="section-label reveal">Chapter I</div>
+    <h2 class="section-heading reveal">The Beginning</h2>
+    <p class="section-quote reveal">"It started with one hello — and turned into forever."</p>
+    <div class="collage-grid cg-chapter1 reveal">
+      <div class="polaroid p-rotate-left p-shadow" style="--delay:0s">
+        <img src="images/photo5.jpg" alt="First day together" />
+        <span class="polaroid-caption">First movie together</span>
+        <div class="tape tape-top"></div>
+      </div>
+      <div class="polaroid p-rotate-right p-shadow" style="--delay:0.15s">
+        <img src="images/photo6.jpg" alt="Campus walks" />
+        <span class="polaroid-caption">Sneaking out of campus✨</span>
+        <div class="tape tape-right"></div>
+      </div>
+      <div class="polaroid p-straight p-shadow" style="--delay:0.3s">
+        <img src="images/photo8.jpg" alt="Cafeteria days" />
+        <span class="polaroid-caption">One Final Trip</span>
+        <div class="tape tape-top"></div>
+      </div>
+      <div class="polaroid p-rotate-left p-shadow" style="--delay:0.45s">
+        <img src="images/photo7.jpg" alt="Study nights" />
+        <span class="polaroid-caption">Wonderful days ✨</span>
+        <div class="tape tape-left"></div>
+      </div>
+    </div>
+    <div class="sticker sticker1">⭐</div>
+    <div class="sticker sticker2">🌸</div>
+    <div class="torn-edge bottom"></div>
+  </section>
+
+  <!-- ============ HIGHLIGHT: UNFORGETTABLE DAYS ============ -->
+  <section class="highlight-section parallax-section" id="highlight1">
+    <div class="highlight-bg parallax-bg" style="background-image: url('images/photo3.jpg')"></div>
+    <div class="highlight-overlay"></div>
+    <div class="highlight-content reveal">
+      <span class="highlight-tag">✦ Featured Memory ✦</span>
+      <h2 class="highlight-title">Unforgettable Days</h2>
+      <p class="highlight-desc">"Those days we laughed until our stomachs hurt, stayed up until dawn, and made promises
+        we still intend to keep."</p>
+      <div class="highlight-divider">⟡ ⟡ ⟡</div>
+    </div>
+  </section>
+
+  <!-- ============ CHAPTER 2: WILD TIMES ============ -->
+  <section class="memory-section memory-section--alt" id="chapter2">
+    <div class="torn-edge top"></div>
+    <div class="section-label reveal">Chapter II</div>
+    <h2 class="section-heading reveal">Wild Times</h2>
+    <p class="section-quote reveal">"The day where i laughed till i cried..."</p>
+    <div class="collage-grid cg-chapter2 reveal">
+      <div class="polaroid p-rotate-right p-shadow" style="--delay:0s">
+        <img src="images/photo9.jpg" alt="College fest" />
+        <span class="polaroid-caption">Fest vibes 🎶</span>
+        <div class="tape tape-top"></div>
+      </div>
+      <div class="feature-photo p-shadow" style="--delay:0.2s">
+        <img src="images/photo10.jpg
+        " alt="Squad goals" />
+        <span class="feature-caption">Funniest moments 😂</span>
+      </div>
+      <div class="polaroid p-rotate-left p-shadow" style="--delay:0.35s">
+        <img src="images/photo11.jpg" alt="Road trip" />
+        <span class="polaroid-caption">Best Times Ever!</span>
+        <div class="tape tape-right"></div>
+      </div>
+    </div>
+    <div class="sticker sticker3">🎸</div>
+    <div class="sticker sticker4">🌟</div>
+    <div class="torn-edge bottom"></div>
+  </section>
+
+  <!-- ============ HIGHLIGHT: THE GRIND ============ -->
+  <section class="highlight-section parallax-section" id="highlight2">
+    <div class="highlight-bg parallax-bg" style="background-image: url('images/photo6.jpg')"></div>
+    <div class="highlight-overlay"
+      style="background: linear-gradient(135deg, rgba(90,60,30,0.7), rgba(180,120,60,0.4))"></div>
+    <div class="highlight-content reveal">
+      <span class="highlight-tag">✦ The Struggle ✦</span>
+      <h2 class="highlight-title">The Grind Was Real</h2>
+      <p class="highlight-desc">"We didn't realize we were making memories—we were just living moments that would one
+        day mean everything."</p>
+      <div class="highlight-divider">⟡ ⟡ ⟡</div>
+    </div>
+  </section>
+
+  <!-- ============ CHAPTER 3: GALLERY ============ -->
+  <section class="memory-section" id="chapter3">
+    <div class="torn-edge top"></div>
+    <div class="section-label reveal">Chapter III</div>
+    <h2 class="section-heading reveal">The Gallery</h2>
+    <p class="section-quote reveal">"Every photo hides a story only we know."</p>
+    <div class="masonry-grid reveal" id="galleryGrid">
+      <div class="masonry-item" data-src="images/photo1.jpg">
+        <img src="images/photo12.jpg" alt="Memory 1" />
+        <div class="masonry-hover"><span>View Memory ✦</span></div>
+      </div>
+      <div class="masonry-item" data-src="images/photo2.jpg">
+        <img src="images/photo13.jpg" alt="Memory 2" />
+        <div class="masonry-hover"><span>View Memory ✦</span></div>
+      </div>
+      <div class="masonry-item" data-src="images/photo3.jpg">
+        <img src="images/photo14.jpg" alt="Memory 3" />
+        <div class="masonry-hover"><span>View Memory ✦</span></div>
+      </div>
+      <div class="masonry-item" data-src="images/photo4.jpg">
+        <img src="images/photo15.jpg" alt="Memory 4" />
+        <div class="masonry-hover"><span>View Memory ✦</span></div>
+      </div>
+      <div class="masonry-item" data-src="images/photo5.jpg">
+        <img src="images/photo16.jpg" alt="Memory 5" />
+        <div class="masonry-hover"><span>View Memory ✦</span></div>
+      </div>
+      <div class="masonry-item" data-src="images/photo6.jpg">
+        <img src="images/photo17.jpg" alt="Memory 6" />
+        <div class="masonry-hover"><span>View Memory ✦</span></div>
+      </div>
+    </div>
+    <div class="sticker sticker5">📷</div>
+    <div class="torn-edge bottom"></div>
+  </section>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+    <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous">‹</button>
+    <div class="lightbox-img-wrap">
+      <img src="" alt="Expanded memory" id="lightboxImg" />
+    </div>
+    <button class="lightbox-nav next" id="lightboxNext" aria-label="Next">›</button>
+  </div>
+
+  <!-- ============ CHAPTER 4: MOMENTS ============ -->
+  <section class="memory-section memory-section--alt" id="chapter4">
+    <div class="torn-edge top"></div>
+    <div class="section-label reveal">Chapter IV</div>
+    <h2 class="section-heading reveal">Moments Between Moments</h2>
+    <p class="section-quote reveal">"The best memories weren't planned — they just happened."</p>
+    <div class="collage-scatter reveal">
+      <div class="polaroid p-rotate-left p-shadow scatter-1" style="--delay:0s">
+        <img src="images/photo18.jpg" alt="Canteen fun" />
+        <span class="polaroid-caption">Table for us</span>
+        <div class="tape tape-top"></div>
+      </div>
+      <div class="note-card scatter-2" style="--delay:0.2s">
+        <p>"You made the ordinary feel extraordinary."</p>
+        <span>— always yours ♥</span>
+      </div>
+      <div class="polaroid p-rotate-right p-shadow scatter-3" style="--delay:0.1s">
+        <img src="images/photo19.jpg" alt="Farewell" />
+        <span class="polaroid-caption">Pure chaos, pure fun 💥</span>
+        <div class="tape tape-left"></div>
+      </div>
+      <div class="polaroid p-straight p-shadow scatter-4" style="--delay:0.3s">
+        <img src="images/photo20.jpg" alt="Study nights" />
+        <span class="polaroid-caption">Where Time Passed 🥺</span>
+        <div class="tape tape-right"></div>
+      </div>
+    </div>
+    <div class="sticker sticker6">💛</div>
+    <div class="torn-edge bottom"></div>
+  </section>
+  <!-- ============ SECRET VAULT SECTION ============ -->
+  <section class="memory-section secret-vault-section" id="secretVault">
+    <div class="torn-edge top"></div>
+    <div class="section-label reveal">Hidden</div>
+    <h2 class="section-heading reveal">Secret Garden 🔒</h2>
+    <p class="section-quote reveal">"The right key opens the right door — only you know which one is yours…"</p>
+
+    <!-- The locked vault card -->
+    <div class="vault-card-wrap reveal">
+      <div class="vault-card" id="vaultCard">
+        <div class="vault-lock">🔐</div>
+        <p class="vault-card-title">Secret Memories</p>
+        <p class="vault-card-hint">Different keys, different secrets ♥</p>
+        <button class="vault-open-btn" id="vaultOpenBtn">Enter the Key</button>
+      </div>
+    </div>
+
+    <div class="sticker" style="top:6%;right:8%;animation-delay:0.6s;font-size:2rem">🗝️</div>
+    <div class="sticker" style="bottom:8%;left:7%;animation-delay:1.4s;font-size:1.8rem">🌸</div>
+    <div class="torn-edge bottom"></div>
+  </section>
+
+  <!-- Key prompt modal 1 — OUTSIDE section to avoid overflow:hidden clipping -->
+  <div class="vault-modal" id="vaultModal">
+    <div class="vault-modal-box">
+      <button class="vault-modal-close" id="vaultModalClose">✕</button>
+      <div class="vault-modal-lock">🔑</div>
+      <h3 class="vault-modal-title">Secret Key</h3>
+      <p class="vault-modal-sub">Enter the key to unlock our hidden memory</p>
+      <input type="password" id="vaultKeyInput" class="vault-key-input" placeholder="Enter secret key…"
+        autocomplete="off" maxlength="30" />
+      <p class="vault-key-error" id="vaultKeyError"></p>
+      <button class="vault-unlock-btn" id="vaultUnlockBtn">Unlock ✦</button>
+    </div>
+  </div>
+
+
+  <!-- ============ HIDDEN MEMORY PANEL (slides in from right) ============ -->
+  <div class="secret-panel" id="secretPanel">
+    <div class="secret-panel-inner">
+      <!-- Close -->
+      <button class="secret-panel-close" id="secretPanelClose">✕ Close</button>
+      <div class="secret-panel-lock-open">🔓</div>
+      <h2 class="secret-panel-title">Our Secret Garden</h2>
+
+      <!-- Top 3 photos -->
+      <div class="secret-photos-row">
+        <div class="secret-polaroid sp-rotate-left">
+          <img src="images/hidden1.jpg" alt="Secret memory 1" />
+          <span>Always you 💛</span>
+        </div>
+        <div class="secret-polaroid sp-straight">
+          <img src="images/hidden2.jpg" alt="Secret memory 2" />
+          <span>That one day ✨</span>
+        </div>
+        <div class="secret-polaroid sp-rotate-right">
+          <img src="images/hidden3.jpg" alt="Secret memory 3" />
+          <span>That one crazy day 🌊</span>
+        </div>
+      </div>
+
+      <!-- Centre paragraph -->
+      <div class="secret-message-block">
+        <p class="secret-message-text">
+          “I don’t think I’ve ever properly told you how much you mean to me, but you’ve been there in ways no one else
+          has. In my lowest moments, when everything felt heavy and confusing, you stayed, you listened, and you
+          supported me without judgment. You gave me strength when I didn’t have any, and comfort when I needed it the
+          most. Every small thing you’ve done for me means more than words can ever explain. I may not always say it,
+          but I will never forget you, because you are one of the most important parts of my life.”
+        </p>
+        <span class="secret-message-sig">— with all my heart ♥</span>
+      </div>
+
+      <!-- Bottom 3 photos -->
+      <div class="secret-photos-row">
+        <div class="secret-polaroid sp-rotate-right">
+          <img src="images/hidden4.jpg" alt="Secret memory 4" />
+          <span>Irreplaceable 🎞️</span>
+        </div>
+        <div class="secret-polaroid sp-straight">
+          <img src="images/hidden5.jpg" alt="Secret memory 5" />
+          <span>Same people, same madness 😂</span>
+        </div>
+        <div class="secret-polaroid sp-rotate-left">
+          <img src="images/hidden6.jpg" alt="Secret memory 6" />
+          <span>Holding onto moments 🤍</span>
+        </div>
+      </div>
+
+      <button class="secret-panel-lock-again" id="secretPanelLockBtn">🔒 Lock Again</button>
+    </div>
+  </div>
+
+
+  <!-- ============ HIDDEN MEMORY PANEL 2 (slides in from left) ============ -->
+  <div class="secret-panel secret-panel-2" id="secretPanel2">
+    <div class="secret-panel-inner">
+      <button class="secret-panel-close" id="secretPanel2Close">✕ Close</button>
+      <div class="secret-panel-lock-open">🔓</div>
+      <h2 class="secret-panel-title">Our Hidden World</h2>
+
+      <!-- Top 3 photos -->
+      <div class="secret-photos-row">
+        <div class="secret-polaroid sp-rotate-right">
+          <img src="images/celebrity4.jpg" alt="Hidden memory 1" />
+          <span>Just the two of us 🌙</span>
+        </div>
+        <div class="secret-polaroid sp-straight">
+          <img src="images/celebrity1.jpg" alt="Hidden memory 2" />
+          <span>Favourite memories ✨</span>
+        </div>
+        <div class="secret-polaroid sp-rotate-left">
+          <img src="images/celebrity2.jpg" alt="Hidden memory 3" />
+          <span>Miss u celebrity ✨</span>
+        </div>
+      </div>
+
+      <!-- Centre paragraph -->
+      <div class="secret-message-block">
+        <p class="secret-message-text">
+          “I don’t even know where to start… you’ve always been my comfort zone. Every memory I have with you—whether
+          it’s something meaningful or just us doing the most stupid, random things—means everything to me. I’ve been my
+          most childish and annoying self with you, and you never once made me feel bad about it. You stayed calm, you
+          listened to me, and you were always there no matter what. Even those times you scolded me or ‘hit’ me, I know
+          it came from care, and honestly, I needed that too.
+
+          Whenever I was going through something, you were the one who understood me without me even explaining
+          properly. You supported me in ways I can’t even describe. I don’t know how to say this perfectly, but to me,
+          you’re not just my best friend… you’re my favorite person. You’re the one I put above everyone else.
+
+          The thought of not having you around or missing you hurts more than anything, because you’ve become such an
+          important part of my life. I really don’t want to lose you. I just want you to stay with me, support me like
+          you always have, and be there… because honestly, life doesn’t feel the same without you.” 💛
+        </p>
+        <span class="secret-message-sig">— only for you ♥</span>
+      </div>
+
+      <!-- Bottom 3 photos -->
+      <div class="secret-photos-row">
+        <div class="secret-polaroid sp-rotate-left">
+          <img src="images/celebrity3.jpg" alt="Hidden memory 4" />
+          <span>No words needed 🤍</span>
+        </div>
+        <div class="secret-polaroid sp-straight">
+          <img src="images/celebrity5.jpg" alt="Hidden memory 5" />
+          <span>Frozen in time 🎞️</span>
+        </div>
+        <div class="secret-polaroid sp-rotate-right">
+          <img src="images/celebrity6.jpg" alt="Hidden memory 6" />
+          <span>Forever grateful 💛</span>
+        </div>
+      </div>
+
+      <button class="secret-panel-lock-again" id="secretPanel2LockBtn">🔒 Lock Again</button>
+    </div>
+  </div>
+
+  <!-- ============ FAREWELL SECTION ============ -->
+  <section class="farewell-section" id="farewell">
+    <div class="farewell-grain"></div>
+    <div class="farewell-content reveal">
+      <div class="farewell-hearts">♥ ♥ ♥</div>
+      <h2 class="farewell-title">Until We Meet Again</h2>
+      <p class="farewell-message">
+        They say goodbyes are hard because what we had was real.<br />
+        The laughs, the chaos, the all-nighters, the celebrations —<br />
+        they weren't just college years. They were the best years.<br /><br />
+        Wherever life takes us next,<br />
+        a part of you will always walk with me.
+      </p>
+      <div class="farewell-sig">— With love, always ♥</div>
+      <button class="replay-btn" id="replayBtn">
+        <span>↑</span> Replay Memories
+      </button>
+      <div class="hidden-msg-wrap">
+        <button class="hidden-msg-trigger" id="hiddenMsgBtn">✦ A secret message ✦</button>
+        <div class="hidden-msg" id="hiddenMsg">
+          <p>"The real treasure was the friends we made along the way. Thank you for being my people. 🌸"</p>
+        </div>
+      </div>
+    </div>
+    <div class="farewell-decorations">
+      <span class="fd fd1">🌸</span>
+      <span class="fd fd2">⭐</span>
+      <span class="fd fd3">♥</span>
+      <span class="fd fd4">✨</span>
+      <span class="fd fd5">🌼</span>
+      <span class="fd fd6">💫</span>
+    </div>
+  </section>
+
+  <!-- ============ VIDEO MEMORIES SECTION ============ -->
+  <section class="memory-section video-section" id="videoMemories">
+    <div class="torn-edge top"></div>
+    <div class="section-label reveal">Chapter V</div>
+    <h2 class="section-heading reveal">Memory Reels</h2>
+    <p class="section-quote reveal">"The moments too alive for a photograph."</p>
+
+    <!-- Embedded Video Player -->
+    <div class="video-player-wrap reveal">
+      <div class="video-polaroid">
+        <div class="video-tape"></div>
+        <div class="video-inner">
+          <video id="memoryVideo" src="videos/Funny.mp4" controls playsinline poster="images/photo3.jpg"></video>
+          <div class="video-play-hint" id="videoPlayHint">
+            <div class="vph-btn">▶</div>
+            <span>Play Memory</span>
+          </div>
+        </div>
+        <span class="video-polaroid-caption">Our Journey Together 🎬</span>
+      </div>
+    </div>
+
+    <div class="sticker" style="top:8%;right:6%;animation-delay:0.4s;font-size:2.5rem">🎥</div>
+    <div class="sticker" style="bottom:10%;left:5%;animation-delay:1.2s;font-size:2rem">🎞️</div>
+    <div class="torn-edge bottom"></div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <p>Made with ♥ for the Class of 2025 &nbsp;·&nbsp; <em>Memories That Stay</em></p>
+  </footer>
+
+  <!-- Background music -->
+  <audio id="bgMusic" loop preload="auto" muted>
+    <source src="music/Video Project 1.m4a" type="audio/mp4" />
+  </audio>
+
+  <!-- Secret Panel 1 song -->
+  <audio id="panel1Music" loop preload="auto">
+    <source src="music/remobgm.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Secret Panel 2 song -->
+  <audio id="panel2Music" loop preload="auto">
+    <source src="music/remobgm.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
