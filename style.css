@@ -20,6 +20,88 @@
 
 html { scroll-behavior: smooth; }
 
+/* ---------- ENTRY SPLASH ---------- */
+.entry-splash {
+  position: fixed; inset: 0; z-index: 99999;
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+.entry-splash.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+.entry-splash-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, #f5e6d3 0%, #fcd5b5 35%, #f7c6c7 65%, #f2d388 100%);
+  animation: splashShift 6s ease-in-out infinite alternate;
+}
+@keyframes splashShift {
+  0%   { filter: hue-rotate(0deg)   brightness(1);   }
+  100% { filter: hue-rotate(15deg)  brightness(1.05); }
+}
+
+.entry-content {
+  position: relative; z-index: 2;
+  text-align: center; padding: 2rem;
+  animation: entryFadeUp 1s ease both;
+}
+@keyframes entryFadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.entry-petals {
+  font-size: 1.8rem; letter-spacing: 0.3em;
+  margin-bottom: 1.2rem; opacity: 0.7;
+  animation: petalsDrift 3s ease-in-out infinite alternate;
+}
+@keyframes petalsDrift {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-8px); }
+}
+
+.entry-title {
+  font-family: var(--font-hand);
+  font-size: clamp(3rem, 12vw, 6rem);
+  color: var(--dark); font-weight: 700;
+  line-height: 1.1; margin-bottom: 0.5rem;
+}
+
+.entry-sub {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 3vw, 1.2rem);
+  color: var(--brown); opacity: 0.8;
+  letter-spacing: 0.06em; margin-bottom: 2rem;
+}
+
+.entry-line {
+  width: 60px; height: 2px;
+  background: var(--brown); opacity: 0.3;
+  margin: 0 auto 2rem;
+}
+
+.entry-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 40px;
+  background: var(--dark); color: var(--beige);
+  border: none; border-radius: 50px;
+  font-family: var(--font-body); font-size: 1.05rem; font-weight: 600;
+  letter-spacing: 0.08em; cursor: pointer;
+  box-shadow: 0 8px 32px rgba(58,37,24,0.35);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  animation: btnPulse 2s ease-in-out infinite;
+}
+.entry-btn:hover { transform: translateY(-3px) scale(1.03); background: var(--brown); box-shadow: 0 14px 40px rgba(58,37,24,0.4); }
+.entry-btn-icon { font-size: 1.3rem; }
+@keyframes btnPulse {
+  0%,100% { box-shadow: 0 8px 32px rgba(58,37,24,0.35); }
+  50%      { box-shadow: 0 8px 48px rgba(58,37,24,0.55); }
+}
+
+.entry-hint {
+  margin-top: 1.2rem; font-family: var(--font-hand);
+  font-size: 1rem; color: var(--brown); opacity: 0.5;
+  animation: petalsDrift 2s ease-in-out infinite alternate;
+}
+
 body {
   font-family: var(--font-body);
   background: var(--offwhite);

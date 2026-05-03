@@ -104,10 +104,12 @@ hiddenMsgBtn.addEventListener('click', () => {
     : '✦ A secret message ✦';
 });
 
-/* ---------- BACKGROUND MUSIC (autoplay) ---------- */
-const bgMusic = document.getElementById('bgMusic');
+/* ---------- ENTRY SPLASH + BACKGROUND MUSIC ---------- */
+const bgMusic  = document.getElementById('bgMusic');
 const musicBtn = document.getElementById('musicBtn');
-const musicIcon = document.getElementById('musicIcon');
+const musicIcon= document.getElementById('musicIcon');
+const entrySplash = document.getElementById('entrySplash');
+const entryBtn    = document.getElementById('entryBtn');
 let musicPlaying = false;
 
 function setMusicPlaying(state) {
@@ -117,36 +119,27 @@ function setMusicPlaying(state) {
 }
 
 function startMusic() {
-  bgMusic.muted = true;           // muted — browsers always allow this
+  bgMusic.muted  = false;
   bgMusic.volume = 0.6;
   bgMusic.play().then(() => {
-    bgMusic.muted = false;        // unmute instantly → full-volume autoplay
     setMusicPlaying(true);
   }).catch(() => {
-    // Still blocked (very strict browsers) — wait for first touch/click
-    const unlock = () => {
-      bgMusic.play().then(() => {
-        bgMusic.muted = false;
-        setMusicPlaying(true);
-      }).catch(() => { });
-      document.removeEventListener('click', unlock);
-      document.removeEventListener('touchstart', unlock);
-      document.removeEventListener('keydown', unlock);
-    };
-    document.addEventListener('click', unlock, { once: true });
-    document.addEventListener('touchstart', unlock, { once: true });
-    document.addEventListener('keydown', unlock, { once: true });
+    // Fallback if still blocked
+    bgMusic.muted = true;
+    bgMusic.play().then(() => {
+      bgMusic.muted = false;
+      setMusicPlaying(true);
+    }).catch(() => {});
   });
 }
 
-// Start as soon as possible
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', startMusic);
-} else {
+// Entry button — user tap guarantees music permission
+entryBtn.addEventListener('click', () => {
+  entrySplash.classList.add('hidden');
   startMusic();
-}
+});
 
-// Manual toggle
+// Manual music toggle button
 musicBtn.addEventListener('click', () => {
   if (musicPlaying) {
     bgMusic.pause();
@@ -155,9 +148,10 @@ musicBtn.addEventListener('click', () => {
     bgMusic.play().then(() => {
       bgMusic.muted = false;
       setMusicPlaying(true);
-    }).catch(() => { });
+    }).catch(() => {});
   }
 });
+
 
 /* ---------- STAGGER REVEAL FOR COLLAGE ITEMS ---------- */
 document.querySelectorAll('.collage-grid .polaroid, .collage-scatter .polaroid').forEach((el, i) => {
