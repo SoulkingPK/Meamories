@@ -313,8 +313,8 @@ document.addEventListener('DOMContentLoaded', () => {
     'celebrity': { panelId: 'secretPanel2', musicId: 'panel2Music' },
     'swetha': { panelId: 'secretPanel3', musicId: 'panel3Music' },
     'panda': { panelId: 'secretPanel4', musicId: 'panel4Music' },
-    'friend5': { panelId: 'secretPanel5', musicId: 'panel5Music' },
-    'friend6': { panelId: 'secretPanel6', musicId: 'panel6Music' },
+    'trouble': { panelId: 'secretPanel5', musicId: 'panel5Music' },
+    'loosu': { panelId: 'secretPanel6', musicId: 'panel6Music' },
   };
 
   const btn = document.getElementById('vaultOpenBtn');
