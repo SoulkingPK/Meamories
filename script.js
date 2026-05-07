@@ -313,6 +313,8 @@ document.addEventListener('DOMContentLoaded', () => {
     'celebrity': { panelId: 'secretPanel2', musicId: 'panel2Music' },
     'swetha': { panelId: 'secretPanel3', musicId: 'panel3Music' },
     'panda': { panelId: 'secretPanel4', musicId: 'panel4Music' },
+    'friend5': { panelId: 'secretPanel5', musicId: 'panel5Music' },
+    'friend6': { panelId: 'secretPanel6', musicId: 'panel6Music' },
   };
 
   const btn = document.getElementById('vaultOpenBtn');
@@ -398,7 +400,9 @@ document.addEventListener('DOMContentLoaded', () => {
         'secretPanel': 'panel1MusicBtn',
         'secretPanel2': 'panel2MusicBtn',
         'secretPanel3': 'panel3MusicBtn',
-        'secretPanel4': 'panel4MusicBtn'
+        'secretPanel4': 'panel4MusicBtn',
+        'secretPanel5': 'panel5MusicBtn',
+        'secretPanel6': 'panel6MusicBtn'
       };
       var musicBtnEl = document.getElementById(musicBtnMap[config.panelId]);
       if (musicBtnEl) {
@@ -427,6 +431,8 @@ document.addEventListener('DOMContentLoaded', () => {
     { panelId: 'secretPanel2', musicId: 'panel2Music' },
     { panelId: 'secretPanel3', musicId: 'panel3Music' },
     { panelId: 'secretPanel4', musicId: 'panel4Music' },
+    { panelId: 'secretPanel5', musicId: 'panel5Music' },
+    { panelId: 'secretPanel6', musicId: 'panel6Music' },
   ];
 
   panelConfigs.forEach(function (cfg) {
@@ -444,7 +450,9 @@ document.addEventListener('DOMContentLoaded', () => {
       'secretPanel': 'panel1MusicBtn',
       'secretPanel2': 'panel2MusicBtn',
       'secretPanel3': 'panel3MusicBtn',
-      'secretPanel4': 'panel4MusicBtn'
+      'secretPanel4': 'panel4MusicBtn',
+      'secretPanel5': 'panel5MusicBtn',
+      'secretPanel6': 'panel6MusicBtn'
     };
     var musicBtnId = musicBtnMap[cfg.panelId];
     var panelMusicBtn = document.getElementById(musicBtnId);
