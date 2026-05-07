@@ -105,11 +105,11 @@ hiddenMsgBtn.addEventListener('click', () => {
 });
 
 /* ---------- ENTRY SPLASH + BACKGROUND MUSIC ---------- */
-const bgMusic  = document.getElementById('bgMusic');
+const bgMusic = document.getElementById('bgMusic');
 const musicBtn = document.getElementById('musicBtn');
-const musicIcon= document.getElementById('musicIcon');
+const musicIcon = document.getElementById('musicIcon');
 const entrySplash = document.getElementById('entrySplash');
-const entryBtn    = document.getElementById('entryBtn');
+const entryBtn = document.getElementById('entryBtn');
 let musicPlaying = false;
 
 function setMusicPlaying(state) {
@@ -131,7 +131,7 @@ function startMusic() {
     bgMusic.play().then(() => {
       bgMusic.muted = false;
       setMusicPlaying(true);
-    }).catch(() => {});
+    }).catch(() => { });
   });
 }
 
@@ -139,45 +139,45 @@ function startMusic() {
 function glitterBurst() {
   var canvas = document.createElement('canvas');
   canvas.style.cssText = 'position:fixed;inset:0;z-index:100001;pointer-events:none;';
-  canvas.width  = window.innerWidth;
+  canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   document.body.appendChild(canvas);
 
   var ctx = canvas.getContext('2d');
-  var colors = ['#f7c6c7','#f2d388','#fcd5b5','#ff99bb','#ffe066',
-                '#ffffff','#8B5E3C','#ffaacc','#ffd700','#ffb347','#e8a0bf'];
+  var colors = ['#f7c6c7', '#f2d388', '#fcd5b5', '#ff99bb', '#ffe066',
+    '#ffffff', '#8B5E3C', '#ffaacc', '#ffd700', '#ffb347', '#e8a0bf'];
   var particles = [];
 
   for (var i = 0; i < 180; i++) {
     var angle = Math.random() * Math.PI * 2;
     var speed = 4 + Math.random() * 9;
     particles.push({
-      x:        canvas.width  / 2,
-      y:        canvas.height / 2,
-      vx:       Math.cos(angle) * speed,
-      vy:       Math.sin(angle) * speed - 3,   // slight upward bias
-      size:     4 + Math.random() * 9,
-      color:    colors[Math.floor(Math.random() * colors.length)],
-      alpha:    1,
+      x: canvas.width / 2,
+      y: canvas.height / 2,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed - 3,   // slight upward bias
+      size: 4 + Math.random() * 9,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      alpha: 1,
       rotation: Math.random() * Math.PI * 2,
       rotSpeed: (Math.random() - 0.5) * 0.25,
-      gravity:  0.07 + Math.random() * 0.06,
-      shape:    Math.floor(Math.random() * 3)  // 0=square, 1=circle, 2=diamond
+      gravity: 0.07 + Math.random() * 0.06,
+      shape: Math.floor(Math.random() * 3)  // 0=square, 1=circle, 2=diamond
     });
   }
 
-  var start    = Date.now();
+  var start = Date.now();
   var duration = 4000;
 
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    var elapsed  = Date.now() - start;
+    var elapsed = Date.now() - start;
     var progress = elapsed / duration;
-    var alive    = false;
+    var alive = false;
 
-    particles.forEach(function(p) {
-      p.x  += p.vx;
-      p.y  += p.vy;
+    particles.forEach(function (p) {
+      p.x += p.vx;
+      p.y += p.vy;
       p.vy += p.gravity;
       p.vx *= 0.985;
       p.rotation += p.rotSpeed;
@@ -189,9 +189,9 @@ function glitterBurst() {
         ctx.globalAlpha = p.alpha;
         ctx.translate(p.x, p.y);
         ctx.rotate(p.rotation);
-        ctx.fillStyle   = p.color;
+        ctx.fillStyle = p.color;
         ctx.shadowColor = p.color;
-        ctx.shadowBlur  = 8;
+        ctx.shadowBlur = 8;
 
         if (p.shape === 0) {
           ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
@@ -203,7 +203,7 @@ function glitterBurst() {
           ctx.beginPath();
           ctx.moveTo(0, -p.size);
           ctx.lineTo(p.size * 0.5, 0);
-          ctx.lineTo(0,  p.size);
+          ctx.lineTo(0, p.size);
           ctx.lineTo(-p.size * 0.5, 0);
           ctx.closePath();
           ctx.fill();
@@ -238,7 +238,7 @@ musicBtn.addEventListener('click', () => {
     bgMusic.play().then(() => {
       bgMusic.muted = false;
       setMusicPlaying(true);
-    }).catch(() => {});
+    }).catch(() => { });
   }
 });
 
@@ -309,18 +309,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // ★ ADD / CHANGE KEYS HERE ★
   // Each key maps to { panelId, musicId }
   const KEY_MAP = {
-    'kitty':     { panelId: 'secretPanel',  musicId: 'panel1Music' },
+    'kitty': { panelId: 'secretPanel', musicId: 'panel1Music' },
     'celebrity': { panelId: 'secretPanel2', musicId: 'panel2Music' },
-    'bestie':    { panelId: 'secretPanel3', musicId: 'panel3Music' },
-    'forever':   { panelId: 'secretPanel4', musicId: 'panel4Music' },
+    'swetha': { panelId: 'secretPanel3', musicId: 'panel3Music' },
+    'panda': { panelId: 'secretPanel4', musicId: 'panel4Music' },
   };
 
-  const btn      = document.getElementById('vaultOpenBtn');
-  const modal    = document.getElementById('vaultModal');
+  const btn = document.getElementById('vaultOpenBtn');
+  const modal = document.getElementById('vaultModal');
   const closeBtn = document.getElementById('vaultModalClose');
-  const input    = document.getElementById('vaultKeyInput');
-  const errorEl  = document.getElementById('vaultKeyError');
-  const unlockBtn= document.getElementById('vaultUnlockBtn');
+  const input = document.getElementById('vaultKeyInput');
+  const errorEl = document.getElementById('vaultKeyError');
+  const unlockBtn = document.getElementById('vaultUnlockBtn');
   const lockIcon = document.querySelector('#vaultCard .vault-lock');
 
   if (!btn || !modal || !input || !unlockBtn) return;
@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (bgMusic && !bgMusic.paused) bgMusic.pause();
   }
   function resumeBgMusic() {
-    if (bgMusic && musicPlaying) bgMusic.play().catch(function(){});
+    if (bgMusic && musicPlaying) bgMusic.play().catch(function () { });
   }
   function playPanelMusic(musicEl) {
     if (!musicEl) return;
@@ -339,12 +339,12 @@ document.addEventListener('DOMContentLoaded', () => {
     musicEl.play().catch(function () {
       // Autoplay blocked — retry on next user interaction
       var retry = function () {
-        musicEl.play().catch(function(){});
-        document.removeEventListener('click',     retry);
-        document.removeEventListener('touchstart',retry);
+        musicEl.play().catch(function () { });
+        document.removeEventListener('click', retry);
+        document.removeEventListener('touchstart', retry);
       };
-      document.addEventListener('click',     retry, { once: true });
-      document.addEventListener('touchstart',retry, { once: true });
+      document.addEventListener('click', retry, { once: true });
+      document.addEventListener('touchstart', retry, { once: true });
     });
   }
   function stopPanelMusic(musicEl) {
@@ -381,11 +381,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function tryUnlock() {
     var entered = input.value.trim().toLowerCase();
-    var config  = KEY_MAP[entered];
+    var config = KEY_MAP[entered];
 
     if (config) {
-      var panel    = document.getElementById(config.panelId);
-      var musicEl  = document.getElementById(config.musicId);
+      var panel = document.getElementById(config.panelId);
+      var musicEl = document.getElementById(config.musicId);
       if (!panel) return;
 
       closeModal();
@@ -423,14 +423,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Wire up close buttons for both panels
   var panelConfigs = [
-    { panelId: 'secretPanel',  musicId: 'panel1Music' },
+    { panelId: 'secretPanel', musicId: 'panel1Music' },
     { panelId: 'secretPanel2', musicId: 'panel2Music' },
     { panelId: 'secretPanel3', musicId: 'panel3Music' },
     { panelId: 'secretPanel4', musicId: 'panel4Music' },
   ];
 
   panelConfigs.forEach(function (cfg) {
-    var panel   = document.getElementById(cfg.panelId);
+    var panel = document.getElementById(cfg.panelId);
     var musicEl = document.getElementById(cfg.musicId);
     if (!panel) return;
 
@@ -452,7 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
       panelMusicBtn.addEventListener('click', function () {
         if (musicEl.paused) {
           // Resume music
-          musicEl.play().catch(function () {});
+          musicEl.play().catch(function () { });
           panelMusicBtn.textContent = '♬ Music';
           panelMusicBtn.classList.remove('muted');
         } else {
