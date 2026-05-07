@@ -311,6 +311,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const KEY_MAP = {
     'kitty':     { panelId: 'secretPanel',  musicId: 'panel1Music' },
     'celebrity': { panelId: 'secretPanel2', musicId: 'panel2Music' },
+    'bestie':    { panelId: 'secretPanel3', musicId: 'panel3Music' },
+    'forever':   { panelId: 'secretPanel4', musicId: 'panel4Music' },
   };
 
   const btn      = document.getElementById('vaultOpenBtn');
@@ -392,9 +394,13 @@ document.addEventListener('DOMContentLoaded', () => {
       playPanelMusic(musicEl);
 
       // Reset music button to playing state each time panel opens
-      var musicBtnEl = config.panelId === 'secretPanel'
-        ? document.getElementById('panel1MusicBtn')
-        : document.getElementById('panel2MusicBtn');
+      var musicBtnMap = {
+        'secretPanel': 'panel1MusicBtn',
+        'secretPanel2': 'panel2MusicBtn',
+        'secretPanel3': 'panel3MusicBtn',
+        'secretPanel4': 'panel4MusicBtn'
+      };
+      var musicBtnEl = document.getElementById(musicBtnMap[config.panelId]);
       if (musicBtnEl) {
         musicBtnEl.textContent = '♬ Music';
         musicBtnEl.classList.remove('muted');
@@ -419,6 +425,8 @@ document.addEventListener('DOMContentLoaded', () => {
   var panelConfigs = [
     { panelId: 'secretPanel',  musicId: 'panel1Music' },
     { panelId: 'secretPanel2', musicId: 'panel2Music' },
+    { panelId: 'secretPanel3', musicId: 'panel3Music' },
+    { panelId: 'secretPanel4', musicId: 'panel4Music' },
   ];
 
   panelConfigs.forEach(function (cfg) {
@@ -432,7 +440,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
     // Panel music toggle button
-    var musicBtnId = cfg.panelId === 'secretPanel' ? 'panel1MusicBtn' : 'panel2MusicBtn';
+    var musicBtnMap = {
+      'secretPanel': 'panel1MusicBtn',
+      'secretPanel2': 'panel2MusicBtn',
+      'secretPanel3': 'panel3MusicBtn',
+      'secretPanel4': 'panel4MusicBtn'
+    };
+    var musicBtnId = musicBtnMap[cfg.panelId];
     var panelMusicBtn = document.getElementById(musicBtnId);
     if (panelMusicBtn) {
       panelMusicBtn.addEventListener('click', function () {

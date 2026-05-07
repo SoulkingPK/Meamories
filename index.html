@@ -397,6 +397,116 @@
     </div>
   </div>
 
+  <!-- ============ HIDDEN MEMORY PANEL 3 (slides in from right) ============ -->
+  <div class="secret-panel" id="secretPanel3">
+    <div class="secret-panel-inner">
+      <button class="secret-panel-close" id="secretPanel3Close">✕ Close</button>
+      <div class="secret-panel-lock-open">🔓</div>
+      <h2 class="secret-panel-title">Our Precious Moments</h2>
+
+      <!-- Top 3 photos -->
+      <div class="secret-photos-row">
+        <div class="secret-polaroid sp-rotate-left">
+          <img src="images/photo15.jpg" alt="Hidden memory 1" />
+          <span>Crazy times ✨</span>
+        </div>
+        <div class="secret-polaroid sp-straight">
+          <img src="images/photo16.jpg" alt="Hidden memory 2" />
+          <span>Always smiling 😊</span>
+        </div>
+        <div class="secret-polaroid sp-rotate-right">
+          <img src="images/photo17.jpg" alt="Hidden memory 3" />
+          <span>Never a dull moment 🌟</span>
+        </div>
+      </div>
+
+      <!-- Centre paragraph -->
+      <div class="secret-message-block">
+        <p class="secret-message-text">
+          “Every time I look back at these memories, I realize how lucky I am to have you in my life. The late night talks, the endless laughter, and even the silent moments we shared. Here's to more beautiful memories together!”
+        </p>
+        <span class="secret-message-sig">— forever yours ♥</span>
+      </div>
+
+      <!-- Bottom 3 photos -->
+      <div class="secret-photos-row">
+        <div class="secret-polaroid sp-rotate-right">
+          <img src="images/photo18.jpg" alt="Hidden memory 4" />
+          <span>Golden days 💛</span>
+        </div>
+        <div class="secret-polaroid sp-straight">
+          <img src="images/photo19.jpg" alt="Hidden memory 5" />
+          <span>Unforgettable 🤍</span>
+        </div>
+        <div class="secret-polaroid sp-rotate-left">
+          <img src="images/photo20.jpg" alt="Hidden memory 6" />
+          <span>Through it all 🌙</span>
+        </div>
+      </div>
+      <!-- Inline music toggle -->
+      <div class="panel-music-wrap">
+        <button class="panel-music-btn" id="panel3MusicBtn">♬ Music</button>
+      </div>
+
+      <button class="secret-panel-lock-again" id="secretPanel3LockBtn">🔒 Lock Again</button>
+    </div>
+  </div>
+
+  <!-- ============ HIDDEN MEMORY PANEL 4 (slides in from left) ============ -->
+  <div class="secret-panel secret-panel-2" id="secretPanel4">
+    <div class="secret-panel-inner">
+      <button class="secret-panel-close" id="secretPanel4Close">✕ Close</button>
+      <div class="secret-panel-lock-open">🔓</div>
+      <h2 class="secret-panel-title">Our Sweet Escapes</h2>
+
+      <!-- Top 3 photos -->
+      <div class="secret-photos-row">
+        <div class="secret-polaroid sp-rotate-right">
+          <img src="images/photo7.jpg" alt="Hidden memory 1" />
+          <span>Adventure awaits 🌎</span>
+        </div>
+        <div class="secret-polaroid sp-straight">
+          <img src="images/photo8.jpg" alt="Hidden memory 2" />
+          <span>Sunsets and you 🌅</span>
+        </div>
+        <div class="secret-polaroid sp-rotate-left">
+          <img src="images/photo9.jpg" alt="Hidden memory 3" />
+          <span>Lost in time ⏳</span>
+        </div>
+      </div>
+
+      <!-- Centre paragraph -->
+      <div class="secret-message-block">
+        <p class="secret-message-text">
+          “You make everything feel like an adventure. No matter where we are, as long as I’m with you, I feel exactly where I’m supposed to be. Thank you for making ordinary days feel so extraordinary. You truly are special.”
+        </p>
+        <span class="secret-message-sig">— yours truly ♥</span>
+      </div>
+
+      <!-- Bottom 3 photos -->
+      <div class="secret-photos-row">
+        <div class="secret-polaroid sp-rotate-left">
+          <img src="images/photo10.jpg" alt="Hidden memory 4" />
+          <span>Perfect escape 🍃</span>
+        </div>
+        <div class="secret-polaroid sp-straight">
+          <img src="images/photo13.jpg" alt="Hidden memory 5" />
+          <span>Just vibes ✨</span>
+        </div>
+        <div class="secret-polaroid sp-rotate-right">
+          <img src="images/photo14.jpg" alt="Hidden memory 6" />
+          <span>My happy place 💛</span>
+        </div>
+      </div>
+      <!-- Inline music toggle -->
+      <div class="panel-music-wrap">
+        <button class="panel-music-btn" id="panel4MusicBtn">♬ Music</button>
+      </div>
+
+      <button class="secret-panel-lock-again" id="secretPanel4LockBtn">🔒 Lock Again</button>
+    </div>
+  </div>
+
   <!-- ============ FAREWELL SECTION ============ -->
   <section class="farewell-section" id="farewell">
     <div class="farewell-grain"></div>
@@ -475,6 +585,16 @@
 
   <!-- Secret Panel 2 song -->
   <audio id="panel2Music" loop preload="auto">
+    <source src="music/remobgm.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Secret Panel 3 song -->
+  <audio id="panel3Music" loop preload="auto">
+    <source src="music/remobgm.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Secret Panel 4 song -->
+  <audio id="panel4Music" loop preload="auto">
     <source src="music/remobgm.mp3" type="audio/mpeg" />
   </audio>
 
